@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Raleway:wght@400;600;700&display=swap');
+#main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.title{
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-family: 'Raleway';
+    font-size: 36px;
+}
+
+.logout{
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    font-family: 'Nunito';
+}
+
+.logout:hover{
+    color: brown;
+}
+
+.buttons{
+    display: flex;
+}
+.buttons>button{
+    margin: 50px;
+    width: 300px;
+    font-family: 'Nunito';
+    color: white;
+    background-color: #333;
+    height: 50px;
+    font-size: 30px;
+    text-transform: uppercase;
+    border: 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.buttons>button:hover{
+    color: black;
+    background: white;
+    border: 1px solid #333;
+}
+
+.none{
+    display: none;
+}
