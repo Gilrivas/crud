@@ -1,4 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Raleway:wght@400;600;700&display=swap');
+body{
+    margin: 0;
+}
+
+@keyframes open {
+    100%{
+        width: 400px;
+    }
+}
+
+.open{
+    animation: open 0.5s linear;
+    
+}
+@keyframes close {
+    100%{
+        width: 70px;
+    }
+}
+
+.close{
+    animation: close 0.5s linear;
+    
+}
 #main{
     display: flex;
     align-items: center;
@@ -6,6 +30,46 @@
     width: 100%;
     min-height: 100vh;
     flex-direction: column;
+    background-color: #dde5f4;
+}
+
+.sideB{
+    background-color: #333;
+    min-height: 100vh;
+    width: 70px;
+    position: fixed;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.fa-bars{
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    cursor: pointer;
+}
+
+#close{
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 30px;
+    left: 24px;
+    cursor: pointer;
+}
+
+#close2{
+    font-size: 20px;
+    position: absolute;
+    top: 30px;
+    right: 24px;
+    cursor: pointer;
 }
 
 .title{
@@ -16,28 +80,37 @@
     font-size: 36px;
 }
 
+
 .logout{
     position: absolute;
-    top: 50px;
-    right: 30px;
+    bottom: 50px;
+    left: 20px;
     font-size: 20px;
     text-transform: uppercase;
     text-decoration: none;
-    color: black;
+    color: white;
     font-family: 'Nunito';
+    transition: 0.3s;
 }
 
-.logout:hover{
-    color: brown;
+#logIcon{
+    color: white;
+    font-size: 30px;
+    transition: 0.3s;
+}
+
+.logout:hover, #logIcon:hover{
+    color: #dde5f4;
+    
 }
 
 .buttons{
     display: flex;
+    flex-direction: column;
 }
 .buttons>button{
-    margin: 50px;
-    width: 300px;
     font-family: 'Nunito';
+    margin: 50px 0px;
     color: white;
     background-color: #333;
     height: 50px;
@@ -52,7 +125,312 @@
     background: white;
     border: 1px solid #333;
 }
+.text{
+    margin: 0;
+}
 
 .none{
-    display: none;
+    display: none !important;
+}
+
+.mainLogin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #dde5f4;
+}
+.formLogin{
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 600px;
+    background-color: #f1f7fe;
+    border-radius: 50px;
+}
+label{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito';
+    margin: 5px 5px;
+}
+
+.passBox, .userBox{
+    background-color: white;
+    margin: 20px 0px;
+    width: 78%;
+    padding: 10px;
+    border-radius: 25px;
+  
+}
+.loginTitle{
+    font-family: 'Raleway';
+    margin: 40px 0px;
+    text-transform: uppercase;
+}
+
+#username, #password, .submit{
+    font-family: 'Nunito';
+    margin: 10px 0px;
+    border: none;
+    width: 80%;
+}
+
+
+.fa-lock,#close,.fa-eye,.fa-eye{
+    margin: 0px 5px;
+}
+#username, #password{
+    height: 30px;
+}
+#username:focus, #password:focus{
+    outline: none;
+}
+
+.submit{
+    height: 40px;
+    background-color: rgb(76, 112, 231);
+    font-size: 20px;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.boxInput{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#eye{
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}
+#eye2{
+    position: absolute;
+    right: 19px;
+    cursor: pointer;
+}
+
+.show{
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+table{
+    width: 90%;
+    height: 90%;
+}
+tr{
+    background-color: white;
+    height: 50px;
+    font-family: 'Nunito';
+    
+}
+
+.add{
+    position: fixed;
+    top: 50px;
+}
+
+.addForm{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    background: #f1f7fe;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+}
+.addForm>h2{
+    font-family: 'Nunito';
+}
+
+.addForm>input{
+    border-radius: 10px;
+    border: none;
+    width: 70%;
+    margin: 10px;
+    height: 50px;
+    font-family: 'nunito';
+    padding: 0px 20px;
+
+}
+.addForm>input:focus{
+    outline: #f1f7fe;
+}
+
+#delete{
+    width: 300px;
+    height: 300px;
+    background-color: #f1f7fe;
+    border-radius: 40px;
+    position: absolute;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#delete > h2{
+    font-family: 'Nunito';
+}
+
+#delete > input{
+    font-family: 'Nunito';
+    margin: 10px 0px;
+}
+
+.btnOnShow{
+    display: flex;
+    position: absolute;
+    right: 5%;
+    top: 50px;
+}
+
+.btnOnShow > button{
+    font-family: 'Nunito';
+    border: 0;
+    width: 100px;
+    margin: 5px;
+    height: 50px;
+    background-color: rgb(76, 112, 231);
+    font-size: 14px;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ;
+}
+
+.btnOnShow > button:hover{
+    width: 110px;
+    height: 60px;
+    font-size: 17px;
+}
+
+.efface{
+    border: 0;
+    width: 100px;
+    margin: 5px;
+    height: 50px;
+    background-color: rgb(76, 112, 231);
+    font-size: 14px;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.formModi{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito';
+    width: 300px;
+    height: 300px;
+    background-color: #f1f7fe;
+    border-radius: 40px;
+    position: absolute;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formModi > input{
+    font-family: 'Nunito';
+    margin: 10px 0px;
+}
+
+.modifyBox{
+    display: flex;
+   
+    position: absolute;
+    right: 5%;
+    top: 150px;
+}
+
+.modifyBox > button{
+    font-family: 'Nunito';
+    border: 0;
+    width: 150px;
+    margin: 5px;
+    height: 50px;
+    background-color: rgb(76, 112, 231);
+    font-size: 14px;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#singleInterForm, #singleEtageForm, #singleDateForm{
+    text-align: center;
+    font-family: 'Nunito';
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    background-color: #f1f7fe;
+    border-radius: 40px;
+    position: absolute;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#singleInterForm > input, #singleEtageForm > input, #singleDateForm > input{
+    font-family: 'Nunito';
+    margin: 10px 0px;
+}
+
+#close3, #close4,#close5,#close6,#close7{
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    cursor: pointer;
+}
+
+.recherche{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchInter, .searchEtage, .searchDate {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btnSearch{
+    font-family: 'Nunito';
+    border: 0;
+    width: 300px;
+    margin: 5px;
+    height: 100px;
+    background-color: rgb(76, 112, 231);
+    font-size: 24px;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.buttonsSearch{
+    position: absolute;
+    display: flex;
+    position: absolute;
+    left: 5%;
+    top: 5%;
 }
