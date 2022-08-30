@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Raleway:wght@400;600;700&display=swap');
 body{
-    margin: 0;
+    margin: 0px 0px 0px 70px;
+    overflow-x: hidden;
 }
+.bodyLogin{
+    margin: 0 !important;
+}
+
 
 @keyframes open {
     100%{
@@ -34,7 +39,7 @@ body{
 }
 
 .sideB{
-    background-color: #333;
+    background-color: rgb(76, 112, 231);
     min-height: 100vh;
     width: 70px;
     position: fixed;
@@ -44,6 +49,7 @@ body{
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    z-index: 999999999999999999999999;
 }
 
 .fa-bars{
@@ -80,7 +86,10 @@ body{
     font-size: 36px;
 }
 
-
+.error{
+    font-family: 'nunito';
+    font-size: 16px;
+}
 .logout{
     position: absolute;
     bottom: 50px;
@@ -100,31 +109,44 @@ body{
 }
 
 .logout:hover, #logIcon:hover{
-    color: #dde5f4;
+    color: #dde5f467;
     
 }
 
 .buttons{
+   
     display: flex;
     flex-direction: column;
 }
-.buttons>button{
+.buttons>a{
     font-family: 'Nunito';
     margin: 50px 0px;
     color: white;
-    background-color: #333;
+    text-decoration: none;
     height: 50px;
-    font-size: 30px;
+    font-size: calc(0.5vw + 0.5vh + 1vmin);
     text-transform: uppercase;
     border: 0;
     cursor: pointer;
+   
+}
+.buttons>a>i{
+    padding: 5px;
     transition: 0.5s;
 }
-.buttons>button:hover{
+
+.buttons>a>i:hover{
     color: black;
     background: white;
-    border: 1px solid #333;
 }
+
+.buttons>a>h2:hover{
+    transition: 1s;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+
+}
+
 .text{
     margin: 0;
 }
@@ -317,7 +339,7 @@ tr{
     font-size: 17px;
 }
 
-.efface{
+.buttonConfirm{
     border: 0;
     width: 100px;
     margin: 5px;
@@ -334,25 +356,27 @@ tr{
     flex-direction: column;
     font-family: 'Nunito';
     width: 300px;
-    height: 300px;
+    height: 350px;
     background-color: #f1f7fe;
     border-radius: 40px;
     position: absolute;
-    top: 50px;
+    top: 2%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.formModi > input{
+.formModi > input,select{
     font-family: 'Nunito';
     margin: 10px 0px;
+    width: 70%;
+    border: 0;
+    font-size: 16px;
 }
 
 .modifyBox{
     display: flex;
-   
     position: absolute;
     right: 5%;
     top: 150px;
@@ -391,6 +415,9 @@ tr{
 #singleInterForm > input, #singleEtageForm > input, #singleDateForm > input{
     font-family: 'Nunito';
     margin: 10px 0px;
+    width: 70%;
+    border: 0;
+    font-size: 16px;
 }
 
 #close3, #close4,#close5,#close6,#close7{
@@ -417,13 +444,13 @@ tr{
 .btnSearch{
     font-family: 'Nunito';
     border: 0;
-    width: 300px;
+    width: 200px;
     margin: 5px;
     height: 100px;
     background-color: rgb(76, 112, 231);
-    font-size: 24px;
+    font-size: 18px;
     color: white;
-    border-radius: 50px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -431,6 +458,41 @@ tr{
     position: absolute;
     display: flex;
     position: absolute;
-    left: 5%;
+    right: 5%;
     top: 5%;
+}
+
+#searchInter,#searchEtage,#searchDate{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    display: flex;
+    align-items: flex-end
+
+}
+
+#searchInter > form{
+    display: flex;
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profile> h1{
+    font-family: 'nunito';
+    text-transform: uppercase;
+    font-size: 40px;
+}
+
+.profilePic{
+    border-radius: 100px;
+    height: 200px;
+    width: 200px;
+}
+
+.fa-gear{
+    font-size: 30px;
 }

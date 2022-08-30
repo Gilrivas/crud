@@ -19,19 +19,17 @@ $findUser->execute();
 $user = $findUser->fetch();
 
 if ($user && $_POST['password'] == $user['password_user']) {
-    $_SESSION['nom'] = $user['name_user']; 
+    $_SESSION['nom'] = $user['login_user']; 
     header('Location: ./index.php');  
     
 } else {
-    echo 'Invalid username or password';
+    
+    echo "<div class='error'>Nom d'utilisateur ou mot de passe invalide</div>";
 }
 
 }
 
-if(isset($_POST['action']) && !empty($_POST['username'])  && !empty($_POST['password'])  && $_POST['action']=="login"){
-    login();
-}
-   
+
 
 ?>
 

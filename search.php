@@ -39,7 +39,7 @@ if(isset($_SESSION['nom'])){
                     <i class="fa-solid fa-folder icons"></i>
                 </a>
 
-                <a href='search.php' class='bts' id='search'>
+                <a class='bts' id='search'>
                     <h2 class='text'></h2>
                     <i class="fa-solid fa-magnifying-glass icons"></i>
                 </a>
@@ -59,15 +59,98 @@ if(isset($_SESSION['nom'])){
             </a> <br>
         </div>
 
+      
 
-        <div class="profile">
-            <img class='profilePic' src="https://picsum.photos/200/300" alt="">
-            <h1><?php echo $_SESSION['nom']?></h1>
-           <!-- <i class="fa-solid fa-gear"></i> -->
+        <div class='recherche' id='searchSection'>
+
+            <div class='buttonsSearch' id='buttonsSearch'>
+                <button class='btnSearch' id='btnSearchInter'>Chercher Intervention</button>
+                <button class='btnSearch' id='btnSearchEtage'>Chercher Étage</button>
+                <button class='btnSearch' id='btnSearchDate'>Chercher Date</button>
+            </div>
+
+            <div class='searchInter none' id='searchInter'>
+               
+                    <form action="" method='POST'>
+                        <select name="inter">
+                            <option value="changement ampoule">changement ampoule</option>
+                            <option value="remplacement serrure">remplacement serrure</option>
+                        </select>
+                        <input type="submit" value='chercher' name='search' class='buttonConfirm'>
+                    </form>
+
+            </div>
+
+            <div class='searchEtage none' id='searchEtage'>
+                    <form action="" method='POST'>
+                        <input type="number" name='etage' placeholder='étage'>
+                        <input type="submit" value='chercher' name='search' class='buttonConfirm'>
+                    </form>
+            </div>
+
+            <div class='searchDate none' id='searchDate'>
+                
+                    <form action="" method='POST'>
+                        <input type="date" name='date' >
+                        <input type="submit" value='chercher' name='search' class='buttonConfirm'>
+                    </form>      
+            </div>
+
+            
             
         </div>
 
+        <?php 
+
+        if(isset($_POST['search']) && !empty($_POST['inter']) && $_POST['search']=="chercher"){
+            echo "<table>
+
+            <tr>
+                <th>ID</th>
+                <th>TYPE D'INTERVENTION</th>
+                <th>ÉTAGE</th>
+                <th>DATE</th>
+            </tr>";
+
+            searchInter();
+
+            echo "</table>";
+        }
+
         
+
+        if(isset($_POST['search']) && !empty($_POST['etage']) && $_POST['search']=="chercher"){
+            echo "<table>
+
+            <tr>
+                <th>ID</th>
+                <th>TYPE D'INTERVENTION</th>
+                <th>ÉTAGE</th>
+                <th>DATE</th>
+            </tr>";
+
+            searchEtage();
+
+            echo "</table>";
+        }
+
+        if(isset($_POST['search']) && !empty($_POST['date']) && $_POST['search']=="chercher"){
+            echo "<table>
+
+            <tr>
+                <th>ID</th>
+                <th>TYPE D'INTERVENTION</th>
+                <th>ÉTAGE</th>
+                <th>DATE</th>
+            </tr>";
+
+            searchDate();
+
+            echo "</table>";
+        }
+       
+        ?>
+
        
 
         <div class='add none' id='addScreen'>
@@ -93,6 +176,9 @@ if(isset($_SESSION['nom'])){
             ?>
         </div>
         
+
+       
+
     <script>
         if ( window.history.replaceState ) {
                 window.history.replaceState( null, null, window.location.href );
@@ -100,6 +186,6 @@ if(isset($_SESSION['nom'])){
     </script>
 
     
-    <script src="assets/js/home.js"></script>
+    <script src="assets/js/search.js"></script>
 </body>
 </html>

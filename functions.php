@@ -3,9 +3,7 @@ function show(){
     $findData = connect()->prepare("SELECT * FROM interventions");
     $findData->execute();
     $data = $findData->fetchAll(PDO::FETCH_ASSOC);
-
-
-
+    
    for ($i=0; $i < 1 ; $i++) { 
     foreach ($data as $key => $value) {
         echo '<tr>',
@@ -13,11 +11,8 @@ function show(){
         '<td style="text-align: center; text-transform: uppercase;">'.$value['intervention'].'</td>',
         '<td style="text-align: center;">'.$value['etage'].'</td>',
         '<td style="text-align: center;">'.$value['date_intervention'].'</td>';
-        
     }
    }
-    
-
 }
 
 function add(){
@@ -31,12 +26,10 @@ function add(){
     $add-> bindParam(':datee', $date, PDO::PARAM_STR);
     $ok = $add->execute();
 
-    if($ok){
-        header('Location: ./index.php');   
+    if($ok){ 
     } else {
         echo 'Error during registration';
     }
-    
 }
 
 function erase(){

@@ -2,7 +2,6 @@ let open = document.getElementById('open');
 let sideB = document.getElementById('sideB');
 let close = document.getElementById('close');
 
-
 open.addEventListener('click', ()=>{
     sideB.classList.add('open');
     open.classList.add('none')
@@ -39,9 +38,10 @@ function change() {
     logIcon.classList.add('none')
 
     logText.innerHTML = 'Se déconnecter'
-    text[0].innerHTML = 'Chercher'
-    text[1].innerHTML = 'Ajouter'
-    text[2].innerHTML = 'Dossiers'
+    text[0].innerHTML = 'Home'
+    text[1].innerHTML = 'Dossiers'
+    text[2].innerHTML = 'Chercher'
+    text[3].innerHTML = 'Ajouter'
    }, 200)
     
 }
@@ -56,6 +56,7 @@ function change2() {
         text[0].innerHTML = ''
         text[1].innerHTML = ''
         text[2].innerHTML = ''
+        text[3].innerHTML = ''
     },300)
     
 }
@@ -94,7 +95,6 @@ function displayNone(element, element2){
     })
 }
 
-display(file, show)
 display(add,addScreen)
 displayNone(close2, addScreen)
 display(showDel, del)
@@ -118,13 +118,6 @@ displayNone(close6, singleEtageForm)
 displayNone(close7, singleDateForm)
 
 
-let search = document.getElementById('search')
-let buttonsSearch = document.getElementById('buttonsSearch')
-let searchInter = document.getElementById('searchInter')
-let btnSearchInter = document.getElementById('btnSearchInter')
-let btnSearchEtage = document.getElementById('btnSearchEtage')
-let btnSearchDate = document.getElementById('btnSearchDate')
 
 
-display(search, buttonsSearch)
 
