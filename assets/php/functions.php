@@ -183,3 +183,47 @@ function searchDate(){
     
 
 }
+
+function optionDate(){
+    $date = connect()->prepare("SELECT DISTINCT date_intervention FROM `interventions`");
+    $date->execute();
+    $data = $date->fetchAll(PDO::FETCH_ASSOC);
+
+    for ($i=0; $i < 1 ; $i++) { 
+        foreach ($data as $key => $value) {
+            echo 
+            '<option>'.$value['date_intervention'].'</option>';
+            
+            
+        }
+       }
+}
+function optionEtage(){
+    $etage = connect()->prepare("SELECT DISTINCT etage FROM `interventions`");
+    $etage->execute();
+    $data = $etage->fetchAll(PDO::FETCH_ASSOC);
+
+    for ($i=0; $i < 1 ; $i++) { 
+        foreach ($data as $key => $value) {
+            echo 
+            '<option>'.$value['etage'].'</option>';
+            
+            
+        }
+       }
+}
+
+function optionInter(){
+    $intervention = connect()->prepare("SELECT DISTINCT intervention FROM `interventions`");
+    $intervention->execute();
+    $data = $intervention->fetchAll(PDO::FETCH_ASSOC);
+
+    for ($i=0; $i < 1 ; $i++) { 
+        foreach ($data as $key => $value) {
+            echo 
+            '<option>'.$value['intervention'].'</option>';
+            
+            
+        }
+       }
+}

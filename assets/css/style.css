@@ -347,8 +347,22 @@ tr{
     background-color: rgb(76, 112, 231);
     font-size: 14px;
     color: white;
-    border-radius: 50px;
+    border-radius: 10px;
     cursor: pointer;
+}
+.label{
+    background-color: rgb(76, 112, 231);
+    border-radius: 50px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.label > i{
+    color: white;
+    
 }
 
 .formModi{
@@ -444,9 +458,9 @@ tr{
 .btnSearch{
     font-family: 'Nunito';
     border: 0;
-    width: 200px;
+    width: auto;
     margin: 5px;
-    height: 100px;
+    height: 50px;
     background-color: rgb(76, 112, 231);
     font-size: 18px;
     color: white;
@@ -457,22 +471,25 @@ tr{
 .buttonsSearch{
     position: absolute;
     display: flex;
-    position: absolute;
-    right: 5%;
     top: 5%;
 }
 
-#searchInter,#searchEtage,#searchDate{
+.searchBox{
     position: absolute;
-    top: 20%;
-    right: 5%;
+    top: 15%;
     display: flex;
-    align-items: flex-end
+    
 
 }
 
-#searchInter > form{
+.searchBox > form{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.searchBox > form > select{
+    width: 100%;
 }
 
 .profile{
@@ -495,4 +512,21 @@ tr{
 
 .fa-gear{
     font-size: 30px;
+}
+
+@media screen and (max-width: 740px) {
+    .btnSearch{
+        width: 150px;
+        height: 50px;
+        font-size: 16px;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .btnSearch{
+        width: 120px;
+        height: 40px;
+        font-size: 14px;
+    }
 }

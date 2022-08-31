@@ -167,10 +167,7 @@ if(isset($_SESSION['nom'])){
 <i class="fa-solid fa-xmark" id='close2'></i>
 <form action="" method='POST' class="addForm">
     <h2 class>AJOUTER</h2>
-    <select name="inter" placeholder="TYPE D'INTERVENTION">
-        <option value="changement ampoule">changement ampoule</option>
-        <option value="remplacement serrure">remplacement serrure</option>
-    </select>
+    <input name="inter" placeholder="TYPE D'INTERVENTION">
     <input type="number" name="etage" placeholder="ÉTAGE">
     <input type="date" name="date" >
     <input type='submit' name='action' value='ajouter'>

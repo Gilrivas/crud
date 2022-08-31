@@ -64,35 +64,47 @@ if(isset($_SESSION['nom'])){
         <div class='recherche' id='searchSection'>
 
             <div class='buttonsSearch' id='buttonsSearch'>
-                <button class='btnSearch' id='btnSearchInter'>Chercher Intervention</button>
-                <button class='btnSearch' id='btnSearchEtage'>Chercher Étage</button>
-                <button class='btnSearch' id='btnSearchDate'>Chercher Date</button>
+                <button class='btnSearch' id='btnSearchInter'>Trier par intervention</button>
+                <button class='btnSearch' id='btnSearchEtage'>Trier par étage</button>
+                <button class='btnSearch' id='btnSearchDate'>Trier par date</button>
             </div>
 
-            <div class='searchInter none' id='searchInter'>
+            <div class='searchBox none' id='searchInter'>
                
                     <form action="" method='POST'>
                         <select name="inter">
-                            <option value="changement ampoule">changement ampoule</option>
-                            <option value="remplacement serrure">remplacement serrure</option>
+                            <?php optionInter() ?>
                         </select>
-                        <input type="submit" value='chercher' name='search' class='buttonConfirm'>
+                        <label class="label"for="interBtn">
+                        <i class="fa-solid fa-magnifying-glass "></i>
+                        <input style="display:none;" type="submit" value='chercher' name='search' id='interBtn' class='buttonConfirm'>
+                    </label>
                     </form>
 
             </div>
 
-            <div class='searchEtage none' id='searchEtage'>
+            <div class='searchBox none' id='searchEtage'>
                     <form action="" method='POST'>
-                        <input type="number" name='etage' placeholder='étage'>
-                        <input type="submit" value='chercher' name='search' class='buttonConfirm'>
+                    <select type="number" name='etage' >
+                        <?php optionEtage() ?>
+                    </select>
+                    <label class="label" for="etageBtn">
+                        <i class="fa-solid fa-magnifying-glass "></i>
+                        <input style="display:none;" type="submit" value='chercher' name='search' id='etageBtn' class='buttonConfirm'>
+                    </label>
                     </form>
             </div>
 
-            <div class='searchDate none' id='searchDate'>
+            <div class='searchBox none' id='searchDate'>
                 
                     <form action="" method='POST'>
-                        <input type="date" name='date' >
-                        <input type="submit" value='chercher' name='search' class='buttonConfirm'>
+                    <select type="date" name='date' >
+                        <?php optionDate() ?>
+                    </select>
+                    <label class="label" for="dateBtn">
+                        <i class="fa-solid fa-magnifying-glass "></i>
+                        <input style="display:none;" type="submit" value='chercher' name='search' id='dateBtn' class='buttonConfirm'>
+                    </label>
                     </form>      
             </div>
 
@@ -158,10 +170,7 @@ if(isset($_SESSION['nom'])){
             <i class="fa-solid fa-xmark" id='close2'></i>
             <form action="" method='POST' class="addForm">
                 <h2 class>AJOUTER</h2>
-                <select name="inter" placeholder="TYPE D'INTERVENTION">
-                    <option value="changement ampoule">changement ampoule</option>
-                    <option value="remplacement serrure">remplacement serrure</option>
-                </select>
+                <input name="inter" placeholder="TYPE D'INTERVENTION">
                 <input type="number" name="etage" placeholder="ÉTAGE">
                 <input type="date" name="date" >
                 <input type='submit' name='action' value='ajouter'>
