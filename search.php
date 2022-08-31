@@ -1,6 +1,6 @@
 <?php 
-include('connect.php');
-include('functions.php');
+include('assets/php/connect.php');
+include('assets/php/functions.php');
 
 
 if(isset($_SESSION['nom'])){
@@ -53,7 +53,7 @@ if(isset($_SESSION['nom'])){
             </div>
 
 
-            <a class='logout' id='logout' href='./logout.php'>
+            <a class='logout' id='logout' href='assets/php/logout.php'>
             <i class="fa-solid fa-arrow-right-from-bracket" id='logIcon'></i>
             <p id='logText'></p>
             </a> <br>
